@@ -57,9 +57,7 @@ app.get("/", function (req, res) {
       res.render("list", {kindOfDate: "Today",newListItem: foundItem});
     })
     
-    setTimeout(() => {
-      document.location.reload();
-    }, 3000);
+    
 });
 
 app.get("/:customListName",function(req,res){
