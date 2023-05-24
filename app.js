@@ -9,7 +9,13 @@ app.set("views", __dirname + "/views");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
-
+let port = process.env.PORT;
+if(port == null || port == ""){
+  port == 4000;
+}
+app.listen(port,function(){
+  console.log("Server is running succesfully");
+});
 const uri = "mongodb+srv://chiemgiabaost:<password>@cluster0.txhp9g3.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect('mongodb+srv://chiemgiabaost:Baomap123@cluster0.txhp9g3.mongodb.net/todolistDB', {
@@ -124,6 +130,4 @@ app.post("/delete",function(req,res){
     })
   }
 })
-app.listen(4000, function () {
-  console.log("Server is running on port 4000");
-});
+
