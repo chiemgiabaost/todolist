@@ -14,7 +14,7 @@ if(port == null || port == ""){
   port == 4000;
 }
 app.listen(port,function(){
-  console.log("Server is running succesfully");
+  console.log("Server is running succesfully"+port);
 });
 const uri = "mongodb+srv://chiemgiabaost:<password>@cluster0.txhp9g3.mongodb.net/?retryWrites=true&w=majority";
 
@@ -57,7 +57,9 @@ app.get("/", function (req, res) {
       res.render("list", {kindOfDate: "Today",newListItem: foundItem});
     })
     
-  
+    setTimeout(() => {
+      document.location.reload();
+    }, 3000);
 });
 
 app.get("/:customListName",function(req,res){
