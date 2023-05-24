@@ -13,7 +13,7 @@ let port = process.env.PORT;
 if(port == null || port == ""){
   port == 4000;
 }
-app.listen("4000",function(){
+app.listen(port,function(){
   console.log("Server is running succesfully"+port);
 });
 const uri = "mongodb+srv://chiemgiabaost:<password>@cluster0.txhp9g3.mongodb.net/?retryWrites=true&w=majority";
